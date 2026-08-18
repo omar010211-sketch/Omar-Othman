@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OMAR OTHMAN | Live Campaigns & Daily Posts</title><link rel="stylesheet" href="resource.css"><script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y4cbi8gt7r");
+</script>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" href="assets/favicon.svg">
+</head><body><header class="top"><div class="wrap nav"><a class="brand" href="index.html">OMAR <b>OTHMAN</b></a><div style="display:flex;align-items:center;gap:8px"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode"><span class="theme-icon">☾</span></button><div class="folder-nav"><a class="back" href="index.html"><span class="back-arrow">←</span> Back to Portfolio</a><span class="folder-count" id="folderCount">Loading…</span></div></div></div></header><main><section class="hero"><div class="wrap"><div class="eyebrow">Fresh work</div><h1>Live Campaigns & Daily Posts</h1><p>A dedicated space for current campaign snapshots and daily social posts. Only real material added to the content file is displayed here.</p></div></section><section><div class="wrap"><div class="grid" id="campaigns"></div></div></section></main><script>
+const REPO_FALLBACK={owner:'omar010211-sketch',repo:'Omar-Othman',branch:'main'};
+function githubRepo(){
+  const host=location.hostname;
+  const parts=location.pathname.split('/').filter(Boolean);
+  if(host.endsWith('.github.io')) return {owner:host.split('.')[0],repo:parts[0]||REPO_FALLBACK.repo,branch:'main'};
+  return REPO_FALLBACK;
+}
+function titleFromFile(name, fallback){
+  return name.replace(/\.[^.]+$/,'').replace(/[-_]+/g,' ').replace(/\b\w/g,m=>m.toUpperCase())||fallback;
+}
+async function folderImages(folder){
+  const {owner,repo,branch}=githubRepo();
+  const url=`https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/contents/${folder}?ref=${encodeURIComponent(branch)}`;
+  const res=await fetch(url,{headers:{Accept:'application/vnd.github+json'}});
+  if(!res.ok) throw new Error('GitHub folder unavailable');
+  const data=await res.json();
+  return data.filter(x=>x.type==='file' && /\.(jpe?g|png|webp|gif)$/i.test(x.name)).map(x=>({name:x.name,url:x.download_url||x.html_url}));
+}
+function safeText(v){return String(v||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+async function loadLiveFolders(){
+ const el=document.querySelector('#campaigns');
+ try{
+   const [campaigns,daily]=await Promise.all([folderImages('assets/live-campaigns'),folderImages('assets/daily-posts')]);
+   const items=[...campaigns.map(x=>({...x,type:'Live Campaign',platform:'Live Campaign'})),...daily.map(x=>({...x,type:'Daily Post',platform:'Daily Post'}))];
+   if(!items.length){el.innerHTML='<div class="empty"><b>No live material added yet.</b><div class="folder-note">Just upload JPG, JPEG, PNG, WEBP or GIF files to <strong>assets/live-campaigns/</strong> or <strong>assets/daily-posts/</strong>. They will appear here automatically — no JSON editing required.</div></div>';return;}
+   el.innerHTML=items.map(x=>`<article class="card"><img src="${x.url}" alt="${safeText(titleFromFile(x.name,x.type))}" class="zoom" loading="lazy"><div class="body"><span class="tag">${x.platform}</span><h3>${safeText(titleFromFile(x.name,x.type))}</h3><p>Added automatically from the portfolio content folder.</p></div></article>`).join('');
+   document.querySelector('#folderCount').textContent=items.length+' files'; bind();
+ }catch(e){el.innerHTML='<div class="empty"><b>Could not read the content folders.</b><div class="folder-note">Make sure the site is deployed on GitHub Pages and the folders are inside <strong>assets/live-campaigns/</strong> and <strong>assets/daily-posts/</strong>.</div></div>';}
+}
+function bind(){document.querySelectorAll('.zoom').forEach(i=>i.onclick=()=>{document.querySelector('#modalImg').src=i.src;document.querySelector('#modal').classList.add('open')})}
+loadLiveFolders();</script><div class="modal" id="modal"><div class="panel"><button class="close" onclick="document.querySelector('#modal').classList.remove('open')">×</button><img id="modalImg"></div></div><script>(function(){const root=document.documentElement,btn=document.querySelector('#themeToggle'),icon=document.querySelector('.theme-icon');const saved=localStorage.getItem('omar-theme');const prefers=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;root.setAttribute('data-theme',saved||(prefers?'dark':'light'));function paint(){const d=root.getAttribute('data-theme')==='dark';if(icon)icon.textContent=d?'☀':'☾';if(btn){btn.title=d?'Light mode':'Dark mode';btn.setAttribute('aria-label',btn.title)}}paint();btn&&btn.addEventListener('click',()=>{const n=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',n);localStorage.setItem('omar-theme',n);paint()})})();</script></body></html>

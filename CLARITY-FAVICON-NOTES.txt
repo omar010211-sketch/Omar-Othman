@@ -1,0 +1,3 @@
+Microsoft Clarity Project ID: y4cbi8gt7r
+Tracking code added to all HTML pages.
+Favicon added: assets/favicon.svg (OM initials).
