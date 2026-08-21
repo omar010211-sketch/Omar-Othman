@@ -1,5 +1,7 @@
 {
-  "images": [
-    "assets/before-after/before-after-1.jpg"
+  "items": [
+    {
+      "image": "assets/before-after/before-after-1.jpg"
+    }
   ]
 }
