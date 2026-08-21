@@ -1,7 +1,10 @@
 {
   "items": [
     {
-      "before": "assets/before-after/before-after-1.jpg"
+      "title": "Campaign 01",
+      "before": "assets/before-after/before-after-1.jpg",
+      "after": "assets/before-after/after-after-1.jpg",
+      "note": "Campaign optimization and performance improvement."
     }
   ]
 }
