@@ -42,5 +42,22 @@
     }
   ],
   "campaignDashboards": [],
-  "aiCampaignVideos": []
+  "aiCampaignVideos": [
+    {
+      "src": "assets/ai-campaign-videos/Breeze final.mp4",
+      "title": "Breeze Final"
+    },
+    {
+      "src": "assets/ai-campaign-videos/FANYOON_2026-07-29_فحص-تكييف-بالجهاز_v01.mp4",
+      "title": "Fanyoon 2026 07 29 فحص تكييف بالجهاز V01"
+    },
+    {
+      "src": "assets/ai-campaign-videos/اعلان مشلح السمو.mp4",
+      "title": "اعلان مشلح السمو"
+    },
+    {
+      "src": "assets/ai-campaign-videos/كارتير سانتوس.mp4",
+      "title": "كارتير سانتوس"
+    }
+  ]
 }
