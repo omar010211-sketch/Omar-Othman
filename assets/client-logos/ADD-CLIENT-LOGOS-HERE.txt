@@ -1,0 +1,2 @@
+ضع شعارات العملاء هنا.
+Client logo images go in this folder.
