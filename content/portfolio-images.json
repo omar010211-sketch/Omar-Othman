@@ -1,8 +1,44 @@
 {
   "clientLogos": [
     {
+      "src": "assets/client-logos/1766093461471760606.png",
+      "title": "1766093461471760606"
+    },
+    {
+      "src": "assets/client-logos/1781720177510330289.png",
+      "title": "1781720177510330289"
+    },
+    {
+      "src": "assets/client-logos/1789692689516529471.png",
+      "title": "1789692689516529471"
+    },
+    {
       "src": "assets/client-logos/1790301565372377811-removebg-preview.png",
       "title": "1790301565372377811 Removebg Preview"
+    },
+    {
+      "src": "assets/client-logos/589439428_122098380807141003_5868783177495535089_n.png",
+      "title": "589439428 122098380807141003 5868783177495535089 N"
+    },
+    {
+      "src": "assets/client-logos/WhatsApp Image 2026-10-08 at 09.49.38.jpeg",
+      "title": "Whatsapp Image 2026 10 08 At 09.49.38"
+    },
+    {
+      "src": "assets/client-logos/e1d6a00a-e977-49e4-846a-c21a28d36ec2.png",
+      "title": "E1D6A00A E977 49E4 846A C21A28D36Ec2"
+    },
+    {
+      "src": "assets/client-logos/logo.png",
+      "title": "Logo"
+    },
+    {
+      "src": "assets/client-logos/starfab-facility-management-logo.png",
+      "title": "Starfab Facility Management Logo"
+    },
+    {
+      "src": "assets/client-logos/tomato.png",
+      "title": "Tomato"
     }
   ],
   "campaignDashboards": [],
