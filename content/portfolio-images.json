@@ -41,7 +41,12 @@
       "title": "Tomato"
     }
   ],
-  "campaignDashboards": [],
+  "campaignDashboards": [
+    {
+      "src": "assets/campaign-dashboards/فترة تجريبية.png",
+      "title": "فترة تجريبية"
+    }
+  ],
   "aiCampaignVideos": [
     {
       "src": "assets/ai-campaign-videos/Breeze final.mp4",
