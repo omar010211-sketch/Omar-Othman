@@ -1,5 +1,10 @@
 {
-  "clientLogos": [],
+  "clientLogos": [
+    {
+      "src": "assets/client-logos/1790301565372377811-removebg-preview.png",
+      "title": "1790301565372377811 Removebg Preview"
+    }
+  ],
   "campaignDashboards": [],
   "aiCampaignVideos": []
 }
